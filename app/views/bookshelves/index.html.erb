@@ -1,0 +1,28 @@
+<h1>My current bookshelf</h1>
+
+<table>
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Author</th>
+
+			<!--sets space between cols as 3 -->
+			<th colspan="3"></th>
+		</tr>
+	</thead>
+
+	<!-- for each book in @books, represented by variable book1... -->
+	<% @books.each do |book1| %>
+		<tr>
+			<td> <%=book1.title%></td>
+			<td> <%=book1.author%></td>
+			<td> <%= link_to 'Show', book1 %></td>
+			<td> <%= link_to 'Edit', edit_book1 %></td>
+			<td> <%= link_to 'Destroy', destroy_book1 %></td>
+		</tr>
+	<% end %>
+</table>
+<br>
+
+<%= link_to 'New book', new_book_path %>
+		
